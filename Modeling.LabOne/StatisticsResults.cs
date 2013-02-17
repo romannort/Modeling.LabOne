@@ -104,7 +104,7 @@ namespace Modeling.LabOne
                     ++pairsInsideCircle;
                 }
             }
-            Double result = 8 * pairsInsideCircle / sequence.Count;
+            Double result = 8 * pairsInsideCircle / (Double)sequence.Count;
             return result;
         }
 
