@@ -38,6 +38,12 @@ namespace Modeling.LabOne
             private set;
         }
 
+        public Double PI
+        {
+            get;
+            private set;
+        }
+
 
         public Boolean Calculate(IList<Double> realization)
         {
@@ -49,6 +55,7 @@ namespace Modeling.LabOne
                 Deviation = this.DeviationEstimation(Cycle);
                 Aperiodic = Appendix.Count;
                 Period = Cycle.Count;
+                this.PI = DistributionUniformity(Cycle);
             }
             catch (Exception)
             {
@@ -83,6 +90,21 @@ namespace Modeling.LabOne
         {
             Double result;
             result = Math.Sqrt(sequence.Count / (Double)(sequence.Count - 1) * sequence.Average(x => Math.Pow(x - ExpectedValue, 2)));
+            return result;
+        }
+
+        private Double DistributionUniformity(IList<Double> sequence)
+        {
+            Func<Double, Double, Boolean> isInsideCircle = (x,y) => (Math.Pow(x, 2) + Math.Pow(y,2)) < 1;
+            Int32 pairsInsideCircle = 0;
+            for (int i = 0; i < sequence.Count - 1; i += 2)
+            {
+                if ( isInsideCircle(sequence[i], sequence[i+1]))
+                {
+                    ++pairsInsideCircle;
+                }
+            }
+            Double result = 8 * pairsInsideCircle / sequence.Count;
             return result;
         }
 
