@@ -16,6 +16,18 @@ namespace Modeling.LabOne
 
         private readonly Int32 startingValue;
 
+        public IList<Double> Realization
+        {
+            get
+            {
+                return realization;
+            }
+            private set
+            {
+
+            }
+        }
+
         public LemerGenerator(Int32 aCoeff, Int32 mCoeff, Int32 startingValue)
         {
             this.aCoeff = aCoeff;
@@ -29,7 +41,7 @@ namespace Modeling.LabOne
             return result;
         }
 
-        private void GenerateRealization()
+        public void GenerateRealization()
         {
             IList<Int32> lemerSequence = new List<Int32>();
             Int32 currentNumber = this.NextNumber(startingValue);
