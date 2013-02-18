@@ -13,11 +13,12 @@ namespace Modeling.LabOne.WpfGui
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+            this.Title = "Modeling.LabOne.WpfGui";
         }
 
 
@@ -80,7 +81,7 @@ namespace Modeling.LabOne.WpfGui
 
         static Int32 ReadInt32( TextBox tb )
         {
-            return Int32.Parse(tb.Text);
+            return (int) UInt32.Parse(tb.Text);
         }
 
         private void OutStatisticsResults(StatisticsResults sr)

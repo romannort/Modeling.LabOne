@@ -53,8 +53,8 @@ namespace Modeling.LabOne
                 ExpectedValue = ExpectedValueEstimation(Cycle);
                 Variance = this.VarianceEstimation(Cycle);
                 Deviation = this.DeviationEstimation(Cycle);
-                Aperiodic = Appendix.Count;
                 Period = Cycle.Count;
+                Aperiodic = Period + 1;
                 this.PI = DistributionUniformity(Cycle);
             }
             catch (Exception)
@@ -70,7 +70,7 @@ namespace Modeling.LabOne
             Double repeatedValue = realization.Last(); // last value it's the same as cycle start value
             Int32 cycleStartIndex = realization.IndexOf(repeatedValue);
             Appendix = realization.Take(cycleStartIndex).ToList();
-            Cycle = realization.Skip(cycleStartIndex).Take(realization.Count - cycleStartIndex - 2).ToList();
+            Cycle = realization.Skip(cycleStartIndex).Take(realization.Count - cycleStartIndex - 1).ToList();
         }
 
         private static Double ExpectedValueEstimation(IEnumerable<Double> sequence)
