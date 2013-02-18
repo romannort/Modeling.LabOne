@@ -75,7 +75,10 @@ namespace Modeling.LabOne
 
         private static Double ExpectedValueEstimation(IEnumerable<Double> sequence)
         {
-            return sequence.Average();
+            List<double> enumerable = sequence as List<double> ?? sequence.ToList();
+            Double sum = enumerable.Sum();
+            Double result = sum/enumerable.LongCount();
+            return Math.Abs(result);
         }
 
         private Double VarianceEstimation(IEnumerable<Double> sequence)
