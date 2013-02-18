@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Modeling.LabOne
 {
@@ -39,7 +36,6 @@ namespace Modeling.LabOne
         }
         
         
-
         private Double variationRange;
 
         private const Int32 IntervalNumber = 20;
@@ -53,7 +49,7 @@ namespace Modeling.LabOne
         }
 
 
-        private void Calculate(ICollection<Double> realization )
+        public void Calculate(ICollection<Double> realization )
         {
             Rows = new Collection<IntervalData>();
             this.variationRange = realization.Max() - realization.Min();
@@ -64,10 +60,6 @@ namespace Modeling.LabOne
 
         private void FindIntervalHits(ICollection<double> realization )
         {
-            ICollection<Double> sortedRealization = realization
-                .OrderBy(x => x)
-                .ToList();
-
             for( int i = 1; i < IntervalNumber + 1; ++i)
             {
                 Double upperBound = i * this.intervalLength;

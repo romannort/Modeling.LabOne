@@ -1,0 +1,28 @@
+﻿<Window x:Class="Modeling.LabOne.WpfGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="LayoutRoot" Background="White" Margin="0,0,-266,0">
+        <Button x:Name="StartButton" Content="GO!" HorizontalAlignment="Left" Margin="444,13,0,0" VerticalAlignment="Top" Width="75" Foreground="Black" Background="White" BorderBrush="Black" Click="StartButtonPressed"/>
+        <oxy:Plot x:Name="SamplePlot"  Margin="0,107,0,10" MaxWidth="800" MinWidth="400"/>
+        <TextBox x:Name="MCoeffInput" HorizontalAlignment="Left" Height="23" Margin="37,13,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="91"/>
+        <TextBlock x:Name="MCoeffLabel" HorizontalAlignment="Left" Margin="10,17,0,0" TextWrapping="Wrap" Text="m" VerticalAlignment="Top"/>
+        <TextBox x:Name="ACoeffInput" HorizontalAlignment="Left" Height="23" Margin="154,13,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="ACoeffLabel" HorizontalAlignment="Left" Margin="142,17,0,0" TextWrapping="Wrap" Text="a" VerticalAlignment="Top"/>
+        <TextBox x:Name="StartingValueInput" HorizontalAlignment="Left" Height="23" Margin="319,13,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="StartingValueLabel" HorizontalAlignment="Left" Margin="299,17,0,0" TextWrapping="Wrap" Text="R0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ExpectedValueLabel" HorizontalAlignment="Left" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="M"/>
+        <TextBox x:Name="ExpectedValueOutput" HorizontalAlignment="Left" Height="23" Margin="37,41,0,0" TextWrapping="Wrap" Text="0.0" VerticalAlignment="Top" Width="181"/>
+        <TextBlock x:Name="DeviationLabel" HorizontalAlignment="Left" Margin="234,45,0,0" TextWrapping="Wrap" Text="D" VerticalAlignment="Top"/>
+        <TextBox x:Name="DeviationValue" HorizontalAlignment="Left" Height="23" Margin="256,41,0,0" TextWrapping="Wrap" Text="0.0" VerticalAlignment="Top" Width="183"/>
+        <TextBlock x:Name="VarianceLabel" HorizontalAlignment="Left" Margin="453,45,0,0" TextWrapping="Wrap" Text="Sigma" VerticalAlignment="Top"/>
+        <TextBox x:Name="SigmaOutput" HorizontalAlignment="Left" Height="23" Margin="493,41,0,0" TextWrapping="Wrap" Text="0.0" VerticalAlignment="Top" Width="182"/>
+        <TextBlock x:Name="PeriodLabel" HorizontalAlignment="Left" Margin="10,73,0,0" TextWrapping="Wrap" Text="Period" VerticalAlignment="Top"/>
+        <TextBox x:Name="PeriodOutput" HorizontalAlignment="Left" Height="23" Margin="49,69,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="79"/>
+        <TextBlock x:Name="AperiodicLabel" HorizontalAlignment="Left" Margin="142,73,0,0" TextWrapping="Wrap" Text="Aperiodic" VerticalAlignment="Top"/>
+        <TextBox x:Name="AperiodicOutput" HorizontalAlignment="Left" Height="23" Margin="198,69,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="PiLabel" HorizontalAlignment="Left" Margin="333,73,0,0" TextWrapping="Wrap" Text="PI" VerticalAlignment="Top"/>
+        <TextBox x:Name="PiValue" HorizontalAlignment="Left" Height="23" Margin="349,69,0,0" TextWrapping="Wrap" Text="0.0" VerticalAlignment="Top" Width="139"/>
+    </Grid>
+</Window>

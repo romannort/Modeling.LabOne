@@ -5,6 +5,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modeling.LabOne.Console", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modeling.LabOne", "Modeling.LabOne\Modeling.LabOne.csproj", "{860F7F3B-2DD9-40D2-805B-94DD2136688F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modeling.LabOne.SilverlightGui", "Modeling.LabOne.SilverlightGui\Modeling.LabOne.SilverlightGui.csproj", "{E9881A85-77D8-47E6-AB03-14D7A4329A58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modeling.LabOne.SilverlightGui.Web", "Modeling.LabOne.SilverlightGui.Web\Modeling.LabOne.SilverlightGui.Web.csproj", "{8906F314-4D21-4AC4-A0B9-85852CD2D201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modeling.LabOne.WpfGui", "Modeling.LabOne.WpfGui\Modeling.LabOne.WpfGui.csproj", "{BBD23FE8-5908-4F81-BAAD-7D02FC18E1EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +25,18 @@ Global
 		{860F7F3B-2DD9-40D2-805B-94DD2136688F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{860F7F3B-2DD9-40D2-805B-94DD2136688F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{860F7F3B-2DD9-40D2-805B-94DD2136688F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9881A85-77D8-47E6-AB03-14D7A4329A58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9881A85-77D8-47E6-AB03-14D7A4329A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9881A85-77D8-47E6-AB03-14D7A4329A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9881A85-77D8-47E6-AB03-14D7A4329A58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8906F314-4D21-4AC4-A0B9-85852CD2D201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8906F314-4D21-4AC4-A0B9-85852CD2D201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8906F314-4D21-4AC4-A0B9-85852CD2D201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8906F314-4D21-4AC4-A0B9-85852CD2D201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD23FE8-5908-4F81-BAAD-7D02FC18E1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD23FE8-5908-4F81-BAAD-7D02FC18E1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD23FE8-5908-4F81-BAAD-7D02FC18E1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD23FE8-5908-4F81-BAAD-7D02FC18E1EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
