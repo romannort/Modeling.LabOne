@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Modeling.LabOne
 {
@@ -52,10 +50,10 @@ namespace Modeling.LabOne
                 this.ParseRealization(realization);
                 ExpectedValue = ExpectedValueEstimation(Cycle);
                 Variance = this.VarianceEstimation(Cycle);
-                Deviation = this.DeviationEstimation(Cycle);
+                Deviation = this.DeviationEstimation(Cycle);                
                 Period = Cycle.Count;
-                Aperiodic = Period + 1;
                 this.PI = DistributionUniformity(Cycle);
+                Aperiodic = Appendix.Count + Period + 1;
             }
             catch (Exception)
             {
@@ -75,10 +73,7 @@ namespace Modeling.LabOne
 
         private static Double ExpectedValueEstimation(IEnumerable<Double> sequence)
         {
-            List<double> enumerable = sequence as List<double> ?? sequence.ToList();
-            Double sum = enumerable.Sum();
-            Double result = sum/enumerable.LongCount();
-            return Math.Abs(result);
+            return Math.Abs(sequence.Average());
         }
 
         private Double VarianceEstimation(IEnumerable<Double> sequence)
@@ -107,7 +102,7 @@ namespace Modeling.LabOne
                     ++pairsInsideCircle;
                 }
             }
-            Double result = 8 * pairsInsideCircle / (Double)sequence.Count;
+            Double result = 2 * pairsInsideCircle / (Double)sequence.Count;
             return result;
         }
 

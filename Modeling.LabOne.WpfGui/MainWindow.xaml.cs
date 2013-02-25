@@ -92,6 +92,7 @@ namespace Modeling.LabOne.WpfGui
             DeviationValue.Text = sr.Deviation.ToString(CultureInfo.InvariantCulture);
             SigmaOutput.Text = sr.Variance.ToString(CultureInfo.InvariantCulture);
             PiValue.Text = sr.PI.ToString(CultureInfo.InvariantCulture);
+            PiValueReal.Text = (Math.PI/4).ToString();
         }
     }
 }
