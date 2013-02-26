@@ -53,7 +53,8 @@ namespace Modeling.LabOne
         {
             Rows = new Collection<IntervalData>();
             this.variationRange = realization.Max() - realization.Min();
-            this.intervalLength = this.variationRange/IntervalNumber;
+            //this.intervalLength = this.variationRange/IntervalNumber;
+            this.intervalLength = 1.0/IntervalNumber;
             this.FindIntervalHits(realization);
         }
 
@@ -65,7 +66,7 @@ namespace Modeling.LabOne
                 Double upperBound = i * this.intervalLength;
                 Double lowerBound = (i-1) * this.intervalLength;
 
-                Int32 hits = realization.Count(x => x >= lowerBound && x <= upperBound);
+                Int32 hits = realization.Count(x => x >= lowerBound && x < upperBound);
                 Rows.Add( new IntervalData
                               {
                                   Hits = hits,

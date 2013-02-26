@@ -53,7 +53,7 @@ namespace Modeling.LabOne
                 Deviation = this.DeviationEstimation(Cycle);                
                 Period = Cycle.Count;
                 this.PI = DistributionUniformity(Cycle);
-                Aperiodic = Appendix.Count + Period + 1;
+                Aperiodic = Appendix.Count + Period;
             }
             catch (Exception)
             {

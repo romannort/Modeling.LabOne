@@ -13,12 +13,12 @@ namespace Modeling.LabOne.WpfGui
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            this.Title = "Modeling.LabOne.WpfGui";
+            this.StartButton.Focus();
         }
 
 
@@ -28,6 +28,10 @@ namespace Modeling.LabOne.WpfGui
             {
                 Int32 aCoeff = ReadInt32(ACoeffInput);
                 Int32 mCoeff = ReadInt32(MCoeffInput);
+                if (mCoeff == 0)
+                {
+                    throw new Exception("M coefficient must be a positive value!");
+                }
                 Int32 startingNumber = ReadInt32(StartingValueInput);
 
                 LemerGenerator lg = new LemerGenerator(aCoeff, mCoeff, startingNumber);
@@ -42,7 +46,9 @@ namespace Modeling.LabOne.WpfGui
             }
             catch (Exception e)
             {
-                // ignore Go button press if exception thrown
+                MessageWindow mw = new MessageWindow(this, e.Message);
+                mw.ShowDialog();
+                
             }
         }
 
@@ -81,7 +87,7 @@ namespace Modeling.LabOne.WpfGui
 
         static Int32 ReadInt32( TextBox tb )
         {
-            return (int) UInt32.Parse(tb.Text);
+            return Int32.Parse(tb.Text);
         }
 
         private void OutStatisticsResults(StatisticsResults sr)
