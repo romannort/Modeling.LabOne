@@ -50,10 +50,15 @@ namespace Modeling.LabOne
                 this.ParseRealization(realization);
                 ExpectedValue = ExpectedValueEstimation(Cycle);
                 Variance = this.VarianceEstimation(Cycle);
+<<<<<<< HEAD
+                Deviation = this.DeviationEstimation(Cycle);
+=======
                 Deviation = this.DeviationEstimation(Cycle);                
+>>>>>>> UI fixes
                 Period = Cycle.Count;
+                Aperiodic = Period + 1;
                 this.PI = DistributionUniformity(Cycle);
-                Aperiodic = Appendix.Count + Period;
+                Aperiodic = Appendix.Count + Period + 1;
             }
             catch (Exception)
             {
@@ -73,12 +78,20 @@ namespace Modeling.LabOne
 
         private static Double ExpectedValueEstimation(IEnumerable<Double> sequence)
         {
+<<<<<<< HEAD
+            List<double> enumerable = sequence as List<double> ?? sequence.ToList();
+            Double sum = enumerable.Sum();
+            Double result = sum/enumerable.LongCount();
+            return Math.Abs(result);
+=======
             return Math.Abs(sequence.Average());
+>>>>>>> UI fixes
         }
 
         private Double VarianceEstimation(IEnumerable<Double> sequence)
         {
-            double result = sequence.Average(x => Math.Pow(x - ExpectedValue, 2));
+            Double result;
+            result = sequence.Average(x => Math.Pow(x - ExpectedValue, 2));
             return result;
         }
 

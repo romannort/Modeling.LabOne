@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Modeling.LabOne
 {
@@ -10,11 +8,11 @@ namespace Modeling.LabOne
     {
         private IList<Double> realization;
 
-        private readonly Int32 aCoeff;
+        private readonly ulong aCoeff;
 
-        private readonly Int32 mCoeff;
+        private readonly ulong mCoeff;
 
-        private readonly Int32 startingValue;
+        private readonly ulong startingValue;
 
         public IList<Double> Realization
         {
@@ -30,21 +28,21 @@ namespace Modeling.LabOne
 
         public LemerGenerator(Int32 aCoeff, Int32 mCoeff, Int32 startingValue)
         {
-            this.aCoeff = aCoeff;
-            this.mCoeff = mCoeff;
-            this.startingValue = startingValue;
+            this.aCoeff = (ulong)aCoeff;
+            this.mCoeff = (ulong)mCoeff;
+            this.startingValue = (ulong)startingValue;
         }
 
-        private Int32 NextNumber(Int32 previousNumber)
+        private UInt64 NextNumber(UInt64 previousNumber)
         {
-            Int32 result = (aCoeff * previousNumber) % mCoeff;
+            UInt64 result = (aCoeff * previousNumber) % mCoeff;
             return result;
         }
 
         public void GenerateRealization()
         {
-            IList<Int32> lemerSequence = new List<Int32>();
-            Int32 currentNumber = this.NextNumber(startingValue);
+            ICollection<ulong> lemerSequence = new List<ulong>();
+            ulong currentNumber = this.NextNumber(startingValue);
 
             while(true)
             {

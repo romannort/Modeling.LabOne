@@ -6,7 +6,7 @@ namespace Modeling.LabOne.WpfGui
     /// <summary>
     /// Interaction logic for MessageWindow.xaml
     /// </summary>
-    public partial class MessageWindow : Window
+    public partial class MessageWindow
     {
         public MessageWindow()
         {
